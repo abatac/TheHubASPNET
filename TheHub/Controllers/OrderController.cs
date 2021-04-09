@@ -32,9 +32,15 @@ namespace TheHub.Controllers
         [SwaggerResponse(HttpStatusCode.InternalServerError, Type = typeof(OrderResponse))]
         public IHttpActionResult Add([FromBody] Order order)
         {
-         
 
-                if (!ModelState.IsValid)
+            // TODO: Remove this logging 
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(ConfigurationManager.AppSettings["LogFileHttp"], true))
+            {
+                var json = new JavaScriptSerializer().Serialize(order);
+                file.WriteLine(DateTime.Now.ToString() + " " + Request.Method.ToString() + " /api/order/add " + " Request Content: " + json);
+            }
+
+            if (!ModelState.IsValid)
             {
                 var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => (e.Exception != null ? e.Exception.Message : e.ErrorMessage)).ToList();
                 throw new HttpResponseException(ResponseUtility.CreateHttpResponseMessage(errors, System.Net.HttpStatusCode.BadRequest));
