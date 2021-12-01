@@ -67,6 +67,15 @@ namespace TheHub.Models
 
         [JsonProperty("monthly_subscription")] public double MonthlySubscription { get; set; }
 
+        [JsonProperty("customer_fedex_ups_account_number")] public string CustomerFedexUpsAccountNumber { get; set; }
+
+        [JsonProperty("shipping_notes")] public string ShippingNotes { get; set; }
+
+        [JsonProperty("subscription_customer_id")] public string SubscriptionCustomerId { get; set; }
+
+        [JsonProperty("data_sensor_list")] public string DataSensorList { get; set; }
+
+
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             return new List<ValidationResult>();

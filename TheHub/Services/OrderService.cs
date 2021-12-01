@@ -74,6 +74,10 @@ namespace TheHub.Services
             dtHeader.Columns.Add("OrderSubscriptionTerm", System.Type.GetType("System.Int32"));
             dtHeader.Columns.Add("MonthlySubscription", System.Type.GetType("System.Decimal"));
             dtHeader.Columns.Add("PctSalesRep", System.Type.GetType("System.String"));
+            dtHeader.Columns.Add("customer_fedex_ups_account_number", System.Type.GetType("System.String"));
+            dtHeader.Columns.Add("shipping_notes", System.Type.GetType("System.String"));
+            dtHeader.Columns.Add("subscription_customer_id", System.Type.GetType("System.String"));
+            dtHeader.Columns.Add("data_sensor_list", System.Type.GetType("System.String"));
 
             DataRow dataRow = dtHeader.NewRow();
             dataRow["CustID"] = order.EpicorAccountId;
@@ -93,6 +97,10 @@ namespace TheHub.Services
             dataRow["OrderSubscriptionTerm"] = order.OrderSubscriptionTerm;
             dataRow["MonthlySubscription"] = order.MonthlySubscription;
             dataRow["PctSalesRep"] = order.PctSalesRep;
+            dataRow["customer_fedex_ups_account_number"] = order.CustomerFedexUpsAccountNumber;
+            dataRow["shipping_notes"] = order.ShippingNotes;
+            dataRow["subscription_customer_id"] = order.SubscriptionCustomerId;
+            dataRow["data_sensor_list"] = order.DataSensorList;
             dtHeader.Rows.Add(dataRow);
 
             return dtHeader;
