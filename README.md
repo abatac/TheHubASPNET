@@ -1,6 +1,9 @@
 # TheHubASPNET
 An ASP.NET web service to add order and get shipment details to the Epicor system.
 
+# Architecture
+![architecture](architecture.png)
+
 # Implemented APIs
 * POST /token - Get the token to access the APIs
 * POST /api/order/add - Creates an order
