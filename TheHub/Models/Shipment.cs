@@ -16,5 +16,9 @@ namespace TheHub.Models
         [JsonProperty("packing_slip_number")]
         public string PackingSlipNumber { get; set; }
         [JsonProperty("shipment_details")] public List<ShipmentDetail> ShipmentDetails { get; set; }
+
+        [JsonProperty("shipped_date")]
+        public string ShippedDate { get; set; }
+        
     }
 }

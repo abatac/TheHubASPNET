@@ -162,6 +162,7 @@ namespace TheHub.Services
                         shipment.SalesForceOrderNumber = salesforceOrderNumber;
                         shipment.SalesForceAccountId = dt.Rows[0]["Salesforce_AcctID_c"].ToString();
                         shipment.PackingSlipNumber = dt.Rows[0]["PackNum"].ToString();
+                        shipment.ShippedDate = dt.Rows[0]["ShippedDate"].ToString();
                         shipment.ShipmentDetails = new List<ShipmentDetail>();
 
                         int rowNumber = 1;
