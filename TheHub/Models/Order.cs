@@ -67,7 +67,7 @@ namespace TheHub.Models
 
         [JsonProperty("monthly_subscription")] public double MonthlySubscription { get; set; }
 
-        [JsonProperty("customer_fedex_ups_account_number")] public string CustomerFedexUpsAccountNumber { get; set; }
+        [JsonProperty("fedex_ups_account_number")] public string CustomerFedexUpsAccountNumber { get; set; }
 
         [JsonProperty("shipping_notes")] public string ShippingNotes { get; set; }
 
