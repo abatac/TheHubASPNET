@@ -75,7 +75,7 @@ namespace TheHub.Models
 
         [JsonProperty("data_sensor_list")] public string DataSensorList { get; set; }
 
-
+        [JsonProperty("account_name")] public string AccountName { get; set; }
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             return new List<ValidationResult>();

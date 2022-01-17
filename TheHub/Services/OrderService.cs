@@ -79,6 +79,18 @@ namespace TheHub.Services
             dtHeader.Columns.Add("subscription_customer_id", System.Type.GetType("System.String"));
             dtHeader.Columns.Add("data_sensor_list", System.Type.GetType("System.String"));
 
+            dtHeader.Columns.Add("total_amount", System.Type.GetType("System.String"));
+            dtHeader.Columns.Add("ship_to_contact", System.Type.GetType("System.String"));
+            dtHeader.Columns.Add("order_date", System.Type.GetType("System.String"));
+            dtHeader.Columns.Add("description", System.Type.GetType("System.String"));
+            dtHeader.Columns.Add("billing_street", System.Type.GetType("System.String"));
+            dtHeader.Columns.Add("billing_state", System.Type.GetType("System.String"));
+            dtHeader.Columns.Add("billing_postal_code", System.Type.GetType("System.String"));
+            dtHeader.Columns.Add("billing_country", System.Type.GetType("System.String"));
+            dtHeader.Columns.Add("billing_city", System.Type.GetType("System.String"));
+            dtHeader.Columns.Add("bill_to_attention", System.Type.GetType("System.String"));
+            dtHeader.Columns.Add("account_name", System.Type.GetType("System.String"));
+
             DataRow dataRow = dtHeader.NewRow();
             dataRow["CustID"] = order.EpicorAccountId;
             dataRow["AccountID"] = order.AccountId;
@@ -101,6 +113,19 @@ namespace TheHub.Services
             dataRow["shipping_notes"] = order.ShippingNotes;
             dataRow["subscription_customer_id"] = order.SubscriptionCustomerId;
             dataRow["data_sensor_list"] = order.DataSensorList;
+
+            dataRow["total_amount"] = order.TotalAmount;
+            dataRow["ship_to_contact"] = order.ShipToContact;
+            dataRow["order_date"] = order.OrderDate;
+            dataRow["description"] = order.Description;
+            dataRow["billing_street"] = order.BillingStreet;
+            dataRow["billing_state"] = order.BillingState;
+            dataRow["billing_postal_code"] = order.BillingPostalCode;
+            dataRow["billing_country"] = order.BillingCountry;
+            dataRow["billing_city"] = order.BillingCity;
+            dataRow["bill_to_attention"] = order.BillToAttention;
+            dataRow["account_name"] = order.AccountName;
+
             dtHeader.Rows.Add(dataRow);
 
             return dtHeader;
@@ -115,6 +140,7 @@ namespace TheHub.Services
             dtLineItems.Columns.Add("UnitPrice", System.Type.GetType("System.Double"));
             dtLineItems.Columns.Add("Sub_UnitPrice", System.Type.GetType("System.Double"));
             dtLineItems.Columns.Add("POLine", System.Type.GetType("System.String"));
+            dtLineItems.Columns.Add("total_price", System.Type.GetType("System.Double"));
 
             if (order.LineItems != null)
             {
@@ -126,6 +152,7 @@ namespace TheHub.Services
                     lineItemDataRow["UnitPrice"] = order.LineItems[i].UnitPrice.GetValueOrDefault(0);
                     lineItemDataRow["Sub_UnitPrice"] = 0f;
                     lineItemDataRow["POLine"] = order.LineItems[i].OrderItemNumber;
+                    lineItemDataRow["total_price"] = order.LineItems[i].TotalPrice;
                     dtLineItems.Rows.Add(lineItemDataRow);
                 }
             }
