@@ -137,10 +137,10 @@ namespace TheHub.Services
 
             dtLineItems.Columns.Add("PartNum", System.Type.GetType("System.String"));
             dtLineItems.Columns.Add("OrderQty", System.Type.GetType("System.Int32"));
-            dtLineItems.Columns.Add("UnitPrice", System.Type.GetType("System.Double"));
-            dtLineItems.Columns.Add("Sub_UnitPrice", System.Type.GetType("System.Double"));
+            dtLineItems.Columns.Add("UnitPrice", System.Type.GetType("System.Decimal"));
+            dtLineItems.Columns.Add("Sub_UnitPrice", System.Type.GetType("System.Decimal"));
             dtLineItems.Columns.Add("POLine", System.Type.GetType("System.String"));
-            dtLineItems.Columns.Add("total_price", System.Type.GetType("System.Double"));
+            dtLineItems.Columns.Add("total_price", System.Type.GetType("System.Decimal"));
 
             if (order.LineItems != null)
             {
