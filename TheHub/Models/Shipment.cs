@@ -19,6 +19,21 @@ namespace TheHub.Models
 
         [JsonProperty("shipped_date")]
         public string ShippedDate { get; set; }
-        
+
+        [JsonProperty("bill_to_customer_name")]
+        public string BillToCustomerName { get; set; }
+
+        [JsonProperty("tracking_id")]
+        public string TrackingId { get; set; }
+
+        [JsonProperty("ship_to_city")]
+        public string ShipToCity { get; set; }
+
+        [JsonProperty("ship_to_state")]
+        public string ShipToState { get; set; }
+
+        [JsonProperty("ship_to_name")]
+        public string ShipToName { get; set; }
+
     }
 }

@@ -190,6 +190,11 @@ namespace TheHub.Services
                         shipment.SalesForceAccountId = dt.Rows[0]["Salesforce_AcctID_c"].ToString();
                         shipment.PackingSlipNumber = dt.Rows[0]["PackNum"].ToString();
                         shipment.ShippedDate = dt.Rows[0]["ShippedDate"].ToString();
+                        shipment.BillToCustomerName = dt.Rows[0]["BillToCustomerName"].ToString();
+                        shipment.TrackingId = dt.Rows[0]["TrackingID"].ToString();
+                        shipment.ShipToCity = dt.Rows[0]["ShipToCity"].ToString();
+                        shipment.ShipToState = dt.Rows[0]["ShipToState"].ToString();
+                        shipment.ShipToName = dt.Rows[0]["ShipToName"].ToString();
                         shipment.ShipmentDetails = new List<ShipmentDetail>();
 
                         int rowNumber = 1;
